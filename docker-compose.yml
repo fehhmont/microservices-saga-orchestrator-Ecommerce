@@ -21,7 +21,6 @@ services:
       POSTGRES_DB: product-db
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      PGDATA: /data/postgres
     networks:
       - orchestrator-saga
     ports:
@@ -34,11 +33,10 @@ services:
       POSTGRES_DB: payment-db
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      PGDATA: /data/postgres
     networks:
       - orchestrator-saga
     ports:
-      - "5433:5432"
+      - "5435:5432"
   
   inventory-db:
     container_name: inventory-db
@@ -47,7 +45,6 @@ services:
       POSTGRES_DB: inventory-db
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
-      PGDATA: /data/postgres
     networks:
       - orchestrator-saga
     ports:
